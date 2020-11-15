@@ -9,7 +9,7 @@
 <h1>Postal Calculations</h1>
 
 <form>
-  <input type="number" min="0.00">
+  <input type="number" min="0.00" id="mail-weight">
   <br>
 
   <input type="radio" name="mail-types" value="letters-stamped">
@@ -21,6 +21,8 @@
   <input type="radio" name="mail-types" value="first-class-retail">
   <label for="first-class-retail">First Class Package Service - Retail</label><br>
 </form>
+
+<button type="button" onclick="calculateRate()">Submit</button>
 
 </body>
 </html>
