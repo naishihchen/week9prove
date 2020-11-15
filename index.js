@@ -14,8 +14,8 @@ express()
   .post('/postRates', (req, res) => {
   	console.log(req.body);
   	var formInputs = {
-  			mailWeight: req.body.mail-weight,
-  			mailType: req.body.mail-types
+  			mailWeight: req.body.mailweight,
+  			mailType: req.body.mailtypes
   		}
   	res.render('pages/postRates', {
   		data: formInputs

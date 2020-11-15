@@ -9,17 +9,17 @@
 <h1>Postal Calculations</h1>
 
 <form name="postal-rates" method="POST" action="/postRates">
-  <label for="mail-weight">Weight</label><br>
-  <input type="number" min="1" step="1" id="mail-weight">
+  <label for="mailweight">Weight</label><br>
+  <input type="number" min="1" step="1" id="mailweight">
   <br>
 
-  <input type="radio" name="mail-types" value="letters-stamped">
+  <input type="radio" name="mailtypes" value="letters-stamped">
   <label for="letters-stamped">Letters (Stamped)</label><br>
-  <input type="radio" name="mail-types" value="letters-metered">
+  <input type="radio" name="mailtypes" value="letters-metered">
   <label for="letters-metered">Letters (Metered)</label><br>
-  <input type="radio" name="mail-types" value="large-envelopes-flat">
+  <input type="radio" name="mailtypes" value="large-envelopes-flat">
   <label for="large-envelopes-flat">Large Envelopes (Flat)</label><br>
-  <input type="radio" name="mail-types" value="first-class-retail">
+  <input type="radio" name="mailtypes" value="first-class-retail">
   <label for="first-class-retail">First Class Package Service - Retail</label><br>
    <input type="submit" value="Submit">
 </form>
