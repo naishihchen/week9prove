@@ -36,15 +36,13 @@
 
         if (mailWeight < 4) {
           weightRate = 0.15 * mailWeight;
-          console.log("Flag 1");
         } else {
           weightRate = 0.15 * 4;
-          console.log("Flag 2");
         }
 
         finalPrice = baseRate + weightRate;
 
-        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+        output.innerHTML = "The final price of your parcel is $" + finalPrice.toFixed(2);
 
         break;
       case 'letters-metered':
@@ -53,15 +51,13 @@
 
         if (mailWeight < 4) {
           weightRate = 0.15 * mailWeight;
-          console.log("Flag 1");
         } else {
           weightRate = 0.15 * 4;
-          console.log("Flag 2");
         }
         
         finalPrice = baseRate + weightRate;
 
-        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+        output.innerHTML = "The final price of your parcel is $" + finalPrice.toFixed(2);
         break;
       case 'large-envelopes-flat':
 
@@ -75,7 +71,7 @@
         
         finalPrice = baseRate + weightRate;
 
-        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+        output.innerHTML = "The final price of your parcel is $" + finalPrice.toFixed(2);
 
         break;
       case 'first-class-retail':
@@ -90,7 +86,7 @@
           finalPrice = 5.9;
         }
 
-        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+        output.innerHTML = "The final price of your parcel is $" + finalPrice.toFixed(2);
 
         break;
       default:
