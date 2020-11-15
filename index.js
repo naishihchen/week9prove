@@ -7,23 +7,5 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/getRates', (req, res) => res.render('pages/getRates.ejs'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-  function calculateRate() {
-	let mailWeight = document.getElementById("mail-weight").value;
-	var mailType = undefined;
-	var radios = document.getElementsByTagName('input');
-
-	for(i = 0; i < radios.length; i++) { 
-                  
-        if(radios[i].type == "radio") { 
-                
-            if(radios[i].checked) {
-                mailType = radios[i].value; 
-            }
-        } 
-    }
-
-    console.log(mailWeight);
-    console.log(mailType); 
-}
