@@ -4,24 +4,20 @@
   <% include ../partials/header.ejs %>
 
   <script type="text/javascript">
-    function calculateRate() {
-  let mailWeight = document.getElementById("mail-weight").value;
-  var mailType = undefined;
-  var radios = document.getElementsByTagName('input');
 
   function calculateRate() {
-  let mailWeight = document.getElementById("mail-weight").value;
-  var mailType = undefined;
-  var radios = document.getElementsByTagName('input');
+    let mailWeight = document.getElementById("mail-weight").value;
+    var mailType = undefined;
+    var radios = document.getElementsByTagName('input');
 
-  for(i = 0; i < radios.length; i++) { 
+    for(i = 0; i < radios.length; i++) { 
                   
-        if(radios[i].type="radio") { 
+      if(radios[i].type="radio") { 
                 
-            if(radios[i].checked) {
-                mailType = radios[i].value; 
-            }
-        } 
+        if(radios[i].checked) {
+          mailType = radios[i].value; 
+        }
+      } 
     }
 
     console.log(mailWeight);
