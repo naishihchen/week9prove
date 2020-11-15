@@ -10,9 +10,15 @@
     var mailType = undefined;
     var radios = document.getElementsByTagName('input');
 
+    var baseRate = 0.00;
+    var weightRate = 0.00;
+    var finalPrice = 0.00;
+
+    var output = document.getElementById("output");
+
     for(i = 0; i < radios.length; i++) { 
                   
-      if(radios[i].type="radio") { 
+      if(radios[i].type == "radio") { 
                 
         if(radios[i].checked) {
           mailType = radios[i].value; 
@@ -22,6 +28,72 @@
 
     console.log(mailWeight);
     console.log(mailType); 
+
+    switch(mailType) {
+      case 'letters-stamped':
+        
+        baseRate = 0.40;
+
+        if (mailWeight < 4) {
+          weightRate = 0.15 * mailWeight;
+        } else {
+          weightRate = 0.15 * 4;
+        }
+
+        finalPrice = baseRate + weightRate;
+
+        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+
+        break;
+      case 'letters-metered':
+
+        baseRate = 0.35;
+
+        if (mailWeight < 4) {
+          weightRate = 0.15 * mailWeight;
+        } else {
+          weightRate = 0.15 * 4;
+        }
+        
+        finalPrice = baseRate + weightRate;
+
+        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+
+      case 'large-envelopes-flat':
+
+        baseRate = 0.80;
+
+        if (mailWeight < 13) {
+          weightRate = 0.20 * mailWeight;
+        } else {
+          weightRate = 0.20 * 13;
+        }
+        
+        finalPrice = baseRate + weightRate;
+
+        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+
+        break;
+      case 'first-class-retail':
+
+        if (mailWeight < 5) {
+          finalPrice = 3.80;
+        } else if (mailWeight < 9) {
+          finalPrice = 4.60;
+        } else if (mailWeight < 13) {
+          finalPrice = 5.3;
+        } else {
+          finalPrice = 5.9;
+        }
+
+        output.innerHTML = "The final price of your parcel is $" + finalPrice;
+
+        break;
+      default:
+        output.innerHTML = "Sorry, an error has occurred. Please consult the error logs.";
+        break;
+    }
+
 }
   </script>
 </head>
@@ -31,7 +103,8 @@
 <h1>Postal Calculations</h1>
 
 <form>
-  <input type="number" min="0.00" id="mail-weight">
+  <label for="mail-weight">Weight</label><br>
+  <input type="number" min="1" step="1" id="mail-weight">
   <br>
 
   <input type="radio" name="mail-types" value="letters-stamped">
@@ -45,6 +118,8 @@
 </form>
 
 <button type="button" onclick="calculateRate()">Submit</button>
+
+<div id="output"></div>
 
 </body>
 </html>

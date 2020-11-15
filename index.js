@@ -16,7 +16,7 @@ express()
 
 	for(i = 0; i < radios.length; i++) { 
                   
-        if(radios[i].type="radio") { 
+        if(radios[i].type == "radio") { 
                 
             if(radios[i].checked) {
                 mailType = radios[i].value; 
