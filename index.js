@@ -12,6 +12,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/getRates', (req, res) => res.render('pages/getRates'))
   .post('/postRates', (req, res) => {
+  	console.log(req.body);
   	var formInputs = {
   			mailWeight: req.body.mail-weight,
   			mailType: req.body.mail-types
